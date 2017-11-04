@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播</title>
+	<link rel="stylesheet" href="src/scss/unslider.css">
+	<link rel="stylesheet" href="src/scss/test.css">
+
+
+
+</head>
+<body>
+<div class="unslider">
+ <div class="infinite-slider unslider-horizontal">
+	<ul class="unslider-wrap unslider-carousel">
+		
+		<li><a href=""><img src="src/images/banner/11.jpg" ></a></li>
+		<li><a href=""><img src="src/images/banner/12.jpg" ></a></li>
+		<li><a href=""><img src="src/images/banner/13.jpg" ></a></li>
+		<li><a href=""><img src="src/images/banner/14.jpg" ></a></li>
+		<li><a href=""><img src="src/images/banner/15.jpg" ></a></li>
+	</ul>
+	
+
+ </div>
+</div>
+
+
+
+
+<script src="src/js/jquery.min.js"></script>
+<script src="src/js/unslider.js"></script> 	
+<script type="text/javascript">
+$(function() {
+	
+	$('.infinite-slider').unslider({
+              infinite: true,
+              autoplay:true
+       });
+	var slider = $('.infinite-slider').unslider();
+	$(".infinite-slider").mouseenter(function(){
+	
+	$(".unslider-arrow").fadeIn("slow");
+	
+	
+	slider.data('unslider').stop();
+
+	})
+
+	$(".unslider").mouseleave(function(){
+		
+		$(".unslider-arrow").fadeOut("slow");
+		slider.data('unslider').start();
+
+		
+	     });
+
+
+		});
+</script>
+</body>
+</html>
